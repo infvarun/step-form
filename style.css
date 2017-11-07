@@ -1,3 +1,6 @@
+body {
+    background-color: #4b4b4b;
+}
 .container{
     margin-top: 30px;
     margin-bottom: 15px;
@@ -31,7 +34,7 @@
     top: 0; 
     left: 0; 
     height: 1px; 
-    background: green;
+    background: #ffe73c;
 }
 .form-wizard{
     position: relative; 
@@ -55,15 +58,15 @@
 }
 .form-wizard.activated .wizard-icon{
     background: #fff; 
-    border: 1px solid green; 
-    color: green; 
+    border: 1px solid #ffe73c; 
+    color: #ffe73c; 
     line-height: 38px;
 }
 .form-wizard.active .wizard-icon{
     width: 48px; 
     height: 48px; 
     margin-top: 0; 
-    background: green; 
+    background: #ffe73c; 
     font-size: 22px; 
     line-height: 48px;
 }
@@ -71,10 +74,10 @@
     color: #ccc; 
 }
 .form-wizard.activated p { 
-    color: green; 
+    color: #ffe73c; 
 }
 .form-wizard.active p { 
-    color: green; 
+    color: #ffe73c; 
 }
 fieldset { 
     display: none; 
@@ -107,13 +110,42 @@ fieldset {
 */
 .btn-previous{
     background-color: lightgrey;
+    position: absolute;
+    left:    15px;
+    bottom:   10px;
 }
 .btn-next{
-    background-color: green;
-    color: white;
+    background-color: #ffe73c;
+    color: #4b4b4b;
+    position: absolute;
+    right:    15px;
+    bottom:   10px;
 }
 iframe{
     width: 100%;
     height: 400px;
     border: 1px solid #ccc;
+}
+
+.preview-row
+{
+    height:500px;
+    background-color:#4b4b4b;
+    color: white;
+}
+
+.navbar {
+    padding: .3rem 1.79rem;
+}
+
+#over img {
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: auto;
+	display: block;
+}
+
+.form-check-label {
+    color: #ffe73c;
 }

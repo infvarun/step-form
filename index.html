@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Form Wizard with jQuery and PHP</title>
+    <title>Aerodesk Configurator</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
@@ -11,31 +11,36 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-8 p-3 mb-2 bg-light text-dark">
-                
+                <nav class="navbar navbar-light justify-content-between" style="background-color: #ffe73c;">
+                    <a class="navbar-brand">Aerodesk Configurator</a>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-warning my-2 my-sm-0" type="submit">Search Master Desk to Configure</button>
+                    </form>
+                </nav>
+        </div>
+        <div class="row preview-row">
+            <div class="col-8 border border-warning" id="over">
+                    <img src="1400/1. ALPHA 1400 YELLOW -Height ADJ-QI-Lightbar.png" width="300" height="300" border="0" style="display: block;" />
             </div>
 
-            <div class="col-4">
+            <div class="col-4  border border-warning">
                 <form action="save.php" method="post">
                     <div class="wizards">
                         <div class="progressbar">
                             <div class="progress-line" data-now-value="12.11" data-number-of-steps="5" style="width: 12.11%;"></div> <!-- 19.66% -->
                         </div>
                         <div class="form-wizard active">
-                            <div class="wizard-icon"><i class="fa fa-file-text-o"></i></div>
-                            <p>License</p>
+                            <div class="wizard-icon"><i class="fa fa-sort-amount-desc"></i></div>
+                            <p>Height</p>
                         </div>
                         <div class="form-wizard">
-                            <div class="wizard-icon"><i class="fa fa-user"></i></div>
-                            <p>About</p>
+                            <div class="wizard-icon"><i class="fa fa-tachometer"></i></div>
+                            <p>Worktop</p>
                         </div>
                         <div class="form-wizard">
-                            <div class="wizard-icon"><i class="fa fa-key"></i></div>
-                            <p>Account</p>
-                        </div>
-                        <div class="form-wizard">
-                            <div class="wizard-icon"><i class="fa fa-globe"></i></div>
-                            <p>Website</p>
+                            <div class="wizard-icon"><i class="fa fa-flask"></i></div>
+                            <p>Color</p>
                         </div>
                         <div class="form-wizard">
                             <div class="wizard-icon"><i class="fa fa-check-circle"></i></div>
@@ -43,47 +48,91 @@
                         </div>
                     </div>
                     <fieldset>
-                        <iframe src="license.txt"></iframe>
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="yes"> I agree with this license
-                        </label>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="legHeight" id="legHeight1" value="fixed" checked>
+                              Fixed&mdash;Height
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="legHeight" id="legHeight2" value="adjustable">
+                              Adjustable&mdash;Height
+                            </label>
+                          </div>
                         <div class="wizard-buttons">
                             <button type="button" class="btn btn-next">Next</button>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <h4>Input personal data</h4>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Nama anda"/>
+                        <h4>Worktop finishing variant</h4>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="lightbar" id="lightbar1" value="fixed" checked>
+                                Lightbar (fixed colour)
+                            </label>
                         </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Surel anda"/>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="lightbar" id="lightbar2" value="adjustable">
+                                Lightbar (adjustable colour)
+                            </label>
                         </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" name="phone" class="form-control" placeholder="Nomor telpon anda"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control" placeholder="Alamat anda"></textarea>
-                        </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="worktop" id="worktop1" value="USB">
+                            USB charging
+                        </label>
+                    </div>
+                    <div>
+                    <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="worktop" id="worktop2" value="13-amp">
+                            13-amp plug
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="worktop" id="worktop3" value="Wireless">
+                            Wireless charging
+                        </label>
+                    </div>
                         <div class="wizard-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <h4>Input account info</h4>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Nama pengguna"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Kata sandi"/>
-                        </div>
+                        <h4>Choose Color</h4>
+                        <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="color" id="White" value="fixed" checked>
+                                    White
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="color" id="Charcoal" value="adjustable">
+                                    Charcoal
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="color" id="Yellow" value="adjustable">
+                                        Yellow
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="color" id="Grey" value="adjustable">
+                                            Grey
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="color" id="Pink" value="adjustable">
+                                                Pink
+                                            </label>
+                                        </div>
                         <div class="wizard-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
@@ -103,10 +152,6 @@
                                 <label>Website URL</label>
                                 <input type="text" name="sites" class="form-control" placeholder="Alamat website"/>
                             </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <input type="text" name="category" class="form-control" placeholder="Category website"/>
-                            </div>
                         <div class="wizard-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
@@ -118,7 +163,7 @@
                         </div>
                         <div class="wizard-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="submit" name="save" class="btn btn-primary btn-submit">Submit</button>
+                            <button type="button" name="save" class="btn btn-next">Done!</button>
                         </div>
                     </fieldset>
                 </form>
